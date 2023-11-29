@@ -13,16 +13,16 @@
     <version>${revision}</version>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.online-shop.store</groupId>-->
-<!--            <artifactId>rest-export</artifactId>-->
-<!--            <version>${store.revision}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.online-shop.storage</groupId>-->
-<!--            <artifactId>rest-export</artifactId>-->
-<!--            <version>${storage.revision}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.online-shop.store</groupId>
+            <artifactId>rest-export</artifactId>
+            <version>${store.revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.online-shop.storage</groupId>
+            <artifactId>rest-export</artifactId>
+            <version>${storage.revision}</version>
+        </dependency>
     </dependencies>
 
 </project>
