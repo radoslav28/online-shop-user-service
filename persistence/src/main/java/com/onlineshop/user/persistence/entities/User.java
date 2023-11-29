@@ -6,8 +6,8 @@ import lombok.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -15,7 +15,6 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Table(name = "users")
 public class User {
 
@@ -46,5 +45,16 @@ public class User {
     @OneToMany
     @JoinColumn(name = "userId")
     private List<CartItem> cartItems;
+
+    @Builder
+    public User(String email, String password, String firstName, String lastName, String phone, Role role) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.role = role;
+        this.cartItems = new ArrayList<>();
+    }
 }
 
