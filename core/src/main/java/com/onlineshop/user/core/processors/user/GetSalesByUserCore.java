@@ -1,9 +1,8 @@
 package com.onlineshop.user.core.processors.user;
 
-import com.onlineshop.storage.api.exceptions.ServiceUnavailableException;
 import com.onlineshop.storage.api.model.SaleModel;
 import com.onlineshop.storage.restexport.StorageServiceRestClient;
-import com.onlineshop.user.api.exceptions.DisallowedIdException;
+import com.onlineshop.user.api.exceptions.*;
 import com.onlineshop.user.api.model.UserModel;
 import com.onlineshop.user.api.operations.user.getsalesbyuser.GetSalesByUserInput;
 import com.onlineshop.user.api.operations.user.getsalesbyuser.GetSalesByUserOperation;

@@ -1,6 +1,6 @@
 package com.onlineshop.user.core.processors.user;
 
-import com.onlineshop.storage.api.exceptions.ServiceUnavailableException;
+import com.onlineshop.user.api.exceptions.ServiceUnavailableException;
 import com.onlineshop.user.api.operations.user.registeruser.RegisterUserInput;
 import com.onlineshop.user.api.operations.user.registeruser.RegisterUserOperation;
 import com.onlineshop.user.api.operations.user.registeruser.RegisterUserResult;
