@@ -17,6 +17,9 @@ public class RegisterUserInput implements ProcessorInput {
     private String email;
 
     @NotBlank
+    private String password;
+
+    @NotBlank
     private String firstName;
 
     @NotBlank
