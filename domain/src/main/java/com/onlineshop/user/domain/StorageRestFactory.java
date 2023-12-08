@@ -16,7 +16,7 @@ public class StorageRestFactory {
     private String storeServiceUrl;
 
     @Bean
-    public StorageServiceRestClient getRestExportClient() {
+    public StorageServiceRestClient getStorageServiceRestExportClient() {
         final ObjectMapper objectMapper = new ObjectMapper();
         return Feign.builder()
                 .encoder(new JacksonEncoder(objectMapper))
