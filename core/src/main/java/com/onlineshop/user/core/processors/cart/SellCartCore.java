@@ -15,6 +15,7 @@ import com.onlineshop.user.api.operations.cartitem.sellcart.SellCartOperation;
 import com.onlineshop.user.api.operations.cartitem.sellcart.SellCartResult;
 import com.onlineshop.user.persistence.entities.User;
 import com.onlineshop.user.persistence.repositories.UserRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,7 @@ public class SellCartCore implements SellCartOperation {
     private final StorageServiceRestClient storageServiceRestClient;
     private final ConversionService conversionService;
     @Override
+    @Transactional
     public SellCartResult process(SellCartInput input) {
 
         User user = userRepository

@@ -14,8 +14,6 @@ import org.hibernate.validator.constraints.UUID;
 @Builder
 public class AddToCartInput implements ProcessorInput {
 
-    @UUID
-    @NotBlank
     private String userId;
 
     @UUID

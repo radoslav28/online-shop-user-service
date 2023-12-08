@@ -12,11 +12,9 @@ import org.hibernate.validator.constraints.UUID;
 @Builder
 public class RemoveFromCartInput implements ProcessorInput {
 
-    @UUID
-    @NotBlank
-    private String  userId;
+    private String userId;
 
     @UUID
     @NotBlank
-    private String  itemId;
+    private String itemId;
 }

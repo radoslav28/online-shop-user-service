@@ -5,6 +5,7 @@ import com.onlineshop.user.api.operations.cartitem.removefromcart.RemoveFromCart
 import com.onlineshop.user.api.operations.cartitem.removefromcart.RemoveFromCartOperation;
 import com.onlineshop.user.api.operations.cartitem.removefromcart.RemoveFromCartResult;
 import com.onlineshop.user.persistence.repositories.CartItemRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.exception.JDBCConnectionException;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ public class RemoveFromCartCore implements RemoveFromCartOperation {
     private final CartItemRepository cartItemRepository;
 
     @Override
+    @Transactional
     public RemoveFromCartResult process(RemoveFromCartInput input) {
 
         try {

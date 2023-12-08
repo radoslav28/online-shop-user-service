@@ -12,7 +12,5 @@ import org.hibernate.validator.constraints.UUID;
 @Builder
 public class EmptyCartInput implements ProcessorInput {
 
-    @UUID
-    @NotBlank
     private String userId;
 }

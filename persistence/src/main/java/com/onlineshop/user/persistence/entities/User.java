@@ -47,13 +47,13 @@ public class User {
     private List<CartItem> cartItems;
 
     @Builder
-    public User(String email, String password, String firstName, String lastName, String phone, Role role) {
+    public User(String email, String password, String firstName, String lastName, String phone) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
-        this.role = role;
+        this.role = Role.USER;
         this.cartItems = new ArrayList<>();
     }
 }

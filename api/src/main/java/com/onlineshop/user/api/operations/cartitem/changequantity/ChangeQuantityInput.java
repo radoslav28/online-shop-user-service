@@ -14,8 +14,6 @@ import org.hibernate.validator.constraints.UUID;
 @Builder
 public class ChangeQuantityInput implements ProcessorInput {
 
-    @UUID
-    @NotBlank
     private String userId;
 
     @UUID

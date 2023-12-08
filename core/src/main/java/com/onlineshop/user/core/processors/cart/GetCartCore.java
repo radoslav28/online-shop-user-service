@@ -20,6 +20,7 @@ import org.hibernate.exception.JDBCConnectionException;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -46,17 +47,17 @@ public class GetCartCore implements GetCartOperation {
 
         List<ItemModel> items = getItems(cartItemList);
 
-        List<CartItemModel> cartItems = cartItemList
-                .stream()
-                .map(ci -> conversionService.convert(ci, CartItemModel.class))
-                .toList();
+        List<CartItemModel> cartItems = new ArrayList<>();
+        cartItemList.forEach(ci -> {
+            CartItemModel cartItem = conversionService.convert(ci, CartItemModel.class);
 
-        cartItems.forEach(ci -> {
             items
-                    .stream()
-                    .filter(i -> ci.getItem().equals(i.getId()))
-                    .findFirst()
-                    .ifPresent(ci::setItem);
+                   .stream()
+                   .filter(i -> String.valueOf(ci.getItemId()).equals(i.getId()))
+                   .findFirst()
+                   .ifPresent(i -> cartItem.setItem(i));
+
+           cartItems.add(cartItem);
         });
 
         return GetCartResult

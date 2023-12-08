@@ -15,10 +15,10 @@ public class KafkaGateway {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final ObjectMapper objectMapper;
 
-    public void sendMessage (SellCartResult output) {
+    public void sendMessage (SellCartResult result) {
         String json = "";
         try {
-            json = objectMapper.writeValueAsString(output);
+            json = objectMapper.writeValueAsString(result);
         } catch (JsonProcessingException e) {
             throw new ParsingToJsonException();
         }
